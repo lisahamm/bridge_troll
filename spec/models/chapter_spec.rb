@@ -3,6 +3,21 @@ require 'rails_helper'
 describe Chapter do
   it { is_expected.to validate_presence_of(:name) }
 
+  it 'validates the format of twitter_handle' do
+    def chapter(twitter_handle)
+      Chapter.new(twitter_handle: twitter_handle)
+    end
+
+    expect(chapter('hello world')).to have(1).errors_on(:twitter_handle)
+    expect(chapter('helloworld')).to have(0).errors_on(:twitter_handle)
+    expect(chapter('@helloworld')).to have(0).errors_on(:twitter_handle)
+  end
+
+  it 'removes leading @ signs from twitter handle' do
+    chapter = Chapter.new(twitter_handle: '@apple')
+    expect(chapter.twitter_handle).to eq('apple')
+  end
+
   describe "#has_leader?" do
     let(:chapter) { create :chapter }
     let(:user) { create :user }

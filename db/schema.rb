@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170202035358) do
+ActiveRecord::Schema.define(version: 20170226190355) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "unaccent"
@@ -36,6 +36,9 @@ ActiveRecord::Schema.define(version: 20170202035358) do
     t.integer  "organization_id",                   null: false
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
+    t.string   "twitter_handle"
+    t.string   "website_url"
+    t.string   "mailing_list_url"
   end
 
   create_table "courses", force: :cascade do |t|

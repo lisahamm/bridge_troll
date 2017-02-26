@@ -11,6 +11,13 @@
 
       <%= f.input :name, placeholder: "ex: BridgeName CityName", hint: "We suggest naming your chapter after the organization and city or region." %>
 
+      <%= f.input :website_url, placeholder: "ex: http://railsbridgechi.com" %>
+
+      <%= f.input :mailing_list_url %>
+
+      <%= f.input :twitter_handle, placeholder: "ex: RailsBridgeChi" %>
+
+
       <div class="actions">
         <%= f.submit class: 'btn btn-submit', data: {disable_with: 'Please wait...'} %>
       </div>
