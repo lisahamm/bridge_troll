@@ -105,6 +105,9 @@ FactoryGirl.define do
 
   factory :chapter do
     sequence(:name) { |n| "Region #{n}" }
+    website_url "http://example.com"
+    mailing_list_url "mailingList"
+    twitter_handle "RailsBridge"
     organization
   end
 

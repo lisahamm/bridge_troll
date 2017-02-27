@@ -27,6 +27,7 @@ gem 'rack-mini-profiler'
 gem 'bower-rails'
 gem 'nearest_time_zone'
 gem 'rack-cors'
+gem 'active_model_serializers', '~> 0.10.0'
 
 group :production do
   gem 'pg'

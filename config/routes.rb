@@ -114,4 +114,10 @@ Bridgetroll::Application.routes.draw do
   if Rails.env.development?
     get "/style_guide" => "static_pages#style_guide"
   end
+
+  namespace :api do
+    namespace :v1 do
+      resources :chapters, only: [:index]
+    end
+  end
 end

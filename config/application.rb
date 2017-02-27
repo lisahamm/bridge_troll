@@ -40,5 +40,7 @@ module Bridgetroll
         resource '/events.json', headers: :any, methods: [:get]
       end
     end
+
+    ActiveModelSerializers.config.adapter = :json_api
   end
 end
